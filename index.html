@@ -104,6 +104,8 @@
     <script src="https://gcore.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://gcore.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
     <script src="https://gcore.jsdelivr.net/npm/url-shorten-worker@1.0.7/main.js" crossorigin="anonymous"></script>
+      
+    <!-- 下面的JS代码修复了后端输出短链接前面加域名的BUG，其他域名访问可能会出现新的bug -->
     <script>
   document.addEventListener("DOMContentLoaded", function() {
     // 监听 Shorten 按钮点击事件
