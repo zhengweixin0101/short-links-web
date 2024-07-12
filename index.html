@@ -117,14 +117,11 @@
         // 获取当前访问的域名
         var currentDomain = window.location.hostname;
 
-        // 动态生成正则表达式以匹配当前域名
-        var domainPattern = new RegExp('^' + currentDomain);
-
         // 去掉短链接前面的域名
-        var cleanText = resultText.replace(domainPattern, '');
+        var cleanText = resultText.replace(currentDomain, '');
 
         // 设置清理后的文本
-        resultDiv.innerText = cleanText;
+        resultDiv.innerText = cleanText.trim();
       }, 500); // 延迟0.5秒以确保结果已经被设置
     });
   });
