@@ -65,6 +65,18 @@
         }
       } 
     </style>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var resultDiv = document.getElementById('result');
+      var resultText = resultDiv.innerText;
+
+      // 去掉短链接前面的域名
+      var cleanText = resultText.replace(/^short-links\.zhengweixin\.top/, '');
+
+      // 设置清理后的文本
+      resultDiv.innerText = cleanText;
+    });
+    </script>
   </head>
   <body>
     <div class="card">
