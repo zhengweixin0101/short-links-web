@@ -117,8 +117,11 @@
         // 获取当前访问的域名
         var currentDomain = window.location.hostname;
 
-        // 去掉短链接前面的域名
-        var cleanText = resultText.replace(currentDomain, '');
+        // 生成正则表达式以匹配当前域名
+        var domainPattern = new RegExp('^https?://' + currentDomain);
+
+        // 去掉短链接前面的域名部分
+        var cleanText = resultText.replace(domainPattern, '');
 
         // 设置清理后的文本
         resultDiv.innerText = cleanText.trim();
