@@ -67,6 +67,24 @@
     </style>
   </head>
   <body>
+<!-- 下面的JS代码修复了后端输出短链接前面加域名的BUG -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // 监听 Shorten 按钮点击事件
+    document.getElementById("searchbtn").addEventListener("click", function() {
+      setTimeout(function() {
+        var resultDiv = document.getElementById('result');
+        var resultText = resultDiv.innerText;
+
+        // 去掉短链接前面的域名
+        var cleanText = resultText.replace(/^(short-links\.zhengweixin\.top|cnnb\.us\.kg)/, '');
+
+        // 设置清理后的文本
+        resultDiv.innerText = cleanText;
+      }, 500); // 延迟0.5秒以确保结果已经被设置
+    });
+  });
+</script>
     <div class="card">
       <h5 class="card-header">🎁 缩短您的网址！</h5>
       <div class="card-body">
@@ -175,26 +193,5 @@
     document.getElementById("notice").innerHTML=notice
   }
 </script>
-      
-    <!-- 下面的JS代码修复了后端输出短链接前面加域名的BUG -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // 监听 Shorten 按钮点击事件
-    document.getElementById("searchbtn").addEventListener("click", function() {
-      setTimeout(function() {
-        var resultDiv = document.getElementById('result');
-        var resultText = resultDiv.innerText;
-
-        // 去掉短链接前面的域名
-        var cleanText = resultText.replace(/^(short-links\.zhengweixin\.top|cnnb\.us\.kg)/, '');
-
-        // 设置清理后的文本
-        resultDiv.innerText = cleanText;
-      }, 500); // 延迟0.5秒以确保结果已经被设置
-    });
-  });
-</script>
-
-  
   
   </body></html>
